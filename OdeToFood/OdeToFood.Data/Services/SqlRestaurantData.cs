@@ -41,5 +41,13 @@ namespace OdeToFood.Data.Services
                    orderby r.Name
                    select r;
         }
+
+        public void Delete(int id) {
+            var model = dbContext.Restaurants.Find(id);
+            if (model != null) {
+                dbContext.Restaurants.Remove(model);
+                dbContext.SaveChanges();
+            }
+        }
     }
 }

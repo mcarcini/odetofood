@@ -10,6 +10,7 @@ namespace OdeToFood.Data.Services
     public class InMemoryRestaurantData : IRestaurantData
     {
         List<Restaurant> restaurants;
+        
 
         public InMemoryRestaurantData() {
             restaurants = new List<Restaurant>
@@ -45,6 +46,14 @@ namespace OdeToFood.Data.Services
         public IEnumerable<Restaurant> GetAll()
         {
             return restaurants.OrderBy(r => r.Name);
+        }
+
+        public void Delete(int id)
+        {
+            var model = Get(id);
+            if (model != null) {
+                restaurants.Remove(model);
+            }
         }
     }
 }
