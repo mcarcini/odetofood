@@ -1,6 +1,7 @@
 ﻿@model IEnumerable<OdeToFood.Data.Models.Restaurant>
 @{
     ViewBag.Title = "Home Page";
+    ViewBag.Message = "Mensaje";
 }
 
 <div class="jumbotron">
@@ -9,3 +10,7 @@
 		Hay @Model.Count() restaurantes en la BD.
 	</div>		
 </div>
+
+@section footer{
+    Custom footer
+    }
