@@ -1,4 +1,5 @@
-﻿using OdeToFood.Web.Models;
+﻿using OdeToFood.Web.Extensions;
+using OdeToFood.Web.Models;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -17,5 +18,10 @@ namespace OdeToFood.Web.Controllers
             model.Name = name ?? "No name";
             return View(model);
         }
+        [IsMobile]
+        public ActionResult Index() {
+            return View();
+        }
+
     }
 }
