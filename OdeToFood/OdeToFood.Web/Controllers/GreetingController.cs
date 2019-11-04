@@ -9,8 +9,11 @@ using System.Web.Mvc;
 
 namespace OdeToFood.Web.Controllers
 {
+    [ActionFilter2]
     public class GreetingController : Controller
     {        
+        [ActionFilter1(Order =1)]              
+        [AuthorizationFilter]
         public ActionResult Index(string name)
         {
             var model = new GreetingViewModel();
