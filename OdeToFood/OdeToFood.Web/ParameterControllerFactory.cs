@@ -13,6 +13,7 @@ namespace OdeToFood.Web
     {
         public IController CreateController(RequestContext requestContext, string controllerName)
         {
+
             if (controllerName == "contact")
             {
                 return new ContactController(new Logger());
